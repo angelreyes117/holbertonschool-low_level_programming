@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Returns Always 0
+ * Return: Always 0 (Success)
  * Description: This program prints a specific message to the
  * standard output using the puts function, which outputs a
  * string followed by a new line.
