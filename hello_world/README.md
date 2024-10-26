@@ -15,3 +15,9 @@ SCRIPTS DESCRIPTION:
 6-size.c: This program prints the sizes of various data types on the computer it is compiled and run on.
 
 ADVANCED:
+
+100-intel.c
+Generates the assembly code (Intel syntax) of a C code and saves it in an output file.
+
+101-quote.c
+Prints "and that piece of art is useful" - Dora Korpar, 2015-10-19" to standard error.
