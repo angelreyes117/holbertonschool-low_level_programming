@@ -29,6 +29,7 @@ DESCRIPTION:
 102-fibonacci.c: Prints the first 50 Fibonacci numbers.
 103-fibonacci.c: Prints Fibonacci numbers up to a specified limit.
 104-fibonacci.c: Computes and prints the first 98 Fibonacci numbers.
+
 README.md: Provides an overview and documentation for the project.
 _putchar.c: Writes a character to the standard output.
 main.h: Header file containing function prototypes and macro definitions.
