@@ -7,19 +7,20 @@
  */
 int main(void)
 {
-    int count;
-    long fibonacci1 = 1, fibonacci2 = 2, next_fibonacci;
+	int count;
+	long fibonacci1 = 1, fibonacci2 = 2, next_fibonacci;
 
-    printf("%ld, %ld", fibonacci1, fibonacci2);
+	printf("%ld, %ld", fibonacci1, fibonacci2);
 
-    for (count = 3; count <= 50; count++)
-    {
-        next_fibonacci = fibonacci1 + fibonacci2;
-        printf(", %ld", next_fibonacci);
-        fibonacci1 = fibonacci2;
-        fibonacci2 = next_fibonacci;
-    }
+	for (count = 3; count <= 50; count++)
+	{
+		next_fibonacci = fibonacci1 + fibonacci2;
+		printf(", %ld", next_fibonacci);
+		fibonacci1 = fibonacci2;
+		fibonacci2 = next_fibonacci;
+	}
 
-    printf("\n");
-    return (0);
+	printf("\n");
+	return (0);
 }
+
