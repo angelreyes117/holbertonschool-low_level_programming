@@ -3,7 +3,8 @@
 /**
  * main - Prints the numbers from 1 to 100, followed by a new line.
  * For multiples of three print Fizz instead of the number,
- * for multiples of five print Buzz, and for multiples of both three and five print FizzBuzz.
+ * for multiples of five print Buzz, and for multiples of both
+ * three and five print FizzBuzz.
  *
  * Return: Always 0.
  */
@@ -38,3 +39,4 @@ int main(void)
 
 	return (0);
 }
+
