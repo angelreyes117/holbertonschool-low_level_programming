@@ -34,6 +34,49 @@ File: 100-atoi.c
 Description: Converts a string to an integer, handling any leading whitespace, +/- signs, and non-digit characters.
 
 
+PART 2
+
+
+0-strcat.c
+Concatenates two strings by appending the second string to the first.
+
+1-strncat.c
+Concatenates a specified number of characters from one string to another.
+
+2-strncpy.c
+Copies a specified number of characters from one string to another.
+
+3-strcmp.c
+Compares two strings lexicographically, returning the difference between the first unmatched character.
+
+4-rev_array.c
+Reverses the elements of an array of integers in place.
+
+5-string_toupper.c
+Converts all lowercase letters in a string to uppercase.
+
+6-cap_string.c
+Capitalizes the first letter of each word in a string.
+
+7-leet.c
+Converts certain letters in a string to their leetspeak equivalent (e.g., 'a' to '4', 'e' to '3', etc.).
+
+100-rot13.c
+Encrypts a string using the rot13 encoding, changing characters to their shifted counterparts.
+
+101-print_number.c
+Prints an integer number without using printf.
+
+102-magic.c
+Implements a function to print a specific magic string, often used in pointer arithmetic or tricky challenges.
+
+103-infinite_add.c
+Adds two large numbers together, handling large integer sizes and potential overflow.
+
+104-print_buffer.c
+Prints the content of a buffer in a formatted manner, printing 10 bytes per line, with hexadecimal and printable characters.
+
+
 
 
 
