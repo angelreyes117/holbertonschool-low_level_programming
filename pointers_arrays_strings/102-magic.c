@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * main - Modifies the value at index 2 of the array using a pointer.
  *
