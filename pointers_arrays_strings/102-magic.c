@@ -1,9 +1,5 @@
 #include <stdio.h>
-/**
- * main - Modifies the value at index 2 of the array using a pointer.
- *
- * Return: Always 0.
- */
+
 int main(void)
 {
 	int n;
