@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - modifies the value at index 2 of the array using a pointer
+ * main - Modifies the value at index 2 of the array using a pointer.
  *
- * Return: Always 0
+ * Return: Always 0.
  */
 int main(void)
 {
@@ -15,11 +15,15 @@ int main(void)
 	p = &n;
 
 	/*
-	 * Add one line of code here
-	 * so that this prints "a[2] = 98\n"
+	 * write your line of code here...
+	 * Remember:
+	 * - you are not allowed to use a
+	 * - you are not allowed to modify p
+	 * - only one statement
+	 * - you are not allowed to code anything else than this line of code
 	 */
 	*(p + 5) = 98;
-
+	/* ...so that this prints "a[2] = 98" */
 	printf("a[2] = %d\n", a[2]);
 	return (0);
 }
