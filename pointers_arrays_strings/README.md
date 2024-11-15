@@ -1,4 +1,6 @@
-DESCRITPION:
+DESCRIPTION:
+
+PART 1
 
 File: 0-reset_to_98.c
 Description: Updates the value of an integer to 98 using a pointer.
@@ -75,6 +77,35 @@ Adds two large numbers together, handling large integer sizes and potential over
 
 104-print_buffer.c
 Prints the content of a buffer in a formatted manner, printing 10 bytes per line, with hexadecimal and printable characters.
+
+PART 3:
+
+0-memset.c
+Function that fills memory with a constant byte.
+
+1-memcpy.c
+Function that copies memory area from one location to another.
+
+2-strchr.c
+Function that locates a character in a string and returns a pointer to its first occurrence.
+
+3-strspn.c
+Function that returns the length of the initial segment of a string consisting only of characters from another string.
+
+4-strpbrk.c
+Function that locates the first occurrence of any of a set of bytes in a string.
+
+5-strstr.c
+Function that locates the first occurrence of a substring within a string.
+
+7-print_chessboard.c
+Function that prints the chessboard (8x8 matrix) represented by a 2D array.
+
+8-print_diagsums.c
+Function that prints the sum of the two diagonals of a square matrix of integers.
+
+100-set_string.c
+Function that sets the value of a pointer to a char, modifying what the pointer points to.
 
 
 
