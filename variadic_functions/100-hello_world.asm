@@ -1,5 +1,5 @@
 section .data
-    msg db 'Hello, World', 0xA  ; The message to be printed, with a newline character
+    msg db 'Hello, World', 0xA  ; The message to be printed, with newline character
 
 section .text
     global _start  ; Tells the linker the entry point of the program
