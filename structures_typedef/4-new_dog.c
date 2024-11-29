@@ -22,7 +22,7 @@ return (len);
 *into dest variable
 *@dest:buffer storing string copy
 *@src: buffer storing string to copy
-*Return:returns copied string
+*Return: returns copied string
 */
 char *_strcopy(char *dest, char *src)
 {
