@@ -5,7 +5,7 @@
  * print_dog - Prints a struct dog.
  * @d: A pointer to the struct dog to print.
  *
- * Description: This function prints the details of a dog. If any member is NULL,
+ * Description: Function prints the details of a dog. If any member is NULL,
  * it prints (nil) instead. If the struct pointer is NULL, it prints nothing.
  */
 void print_dog(struct dog *d)
