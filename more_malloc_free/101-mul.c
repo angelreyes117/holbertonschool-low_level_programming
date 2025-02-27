@@ -1,126 +1,160 @@
-#include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
-#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
+#include "main.h"
+
+int isNumber(char *str);
+int *int_calloc(int nmemb, unsigned int size);
+void multiply(int *product, char *n1, char *n2, int len1, int len2);
 
 /**
- * _is_zero - determines if any number is zero
- * @argv: argument vector.
- *
- * Return: no return.
- */
-void _is_zero(char *argv[])
+  * error - print error message.
+  * @code: error code for exit
+  * Return: void
+  */
+void error(int code)
 {
-	int i, isn1 = 1, isn2 = 1;
-
-	for (i = 0; argv[1][i]; i++)
-		if (argv[1][i] != '0')
-		{
-			isn1 = 0;
-			break;
-		}
-
-	for (i = 0; argv[2][i]; i++)
-		if (argv[2][i] != '0')
-		{
-			isn2 = 0;
-			break;
-		}
-
-	if (isn1 == 1 || isn2 == 1)
-	{
-		printf("0\n");
-		exit(0);
-	}
+	_putchar('E');
+	_putchar('r');
+	_putchar('r');
+	_putchar('o');
+	_putchar('r');
+	_putchar('\n');
+	exit(code);
 }
 
 /**
- * _initialize_array - set memery to zero in a new array
- * @ar: char array.
- * @lar: length of the char array.
- *
- * Return: pointer of a char array.
- */
-char *_initialize_array(char *ar, int lar)
-{
-	int i = 0;
+* main - multiplies two numbers recieved through command line.
+* @argc: number of command line arguments
+* @argv: An array containing the program command line arguments
+*
+* Return: 0 if success otherwise 1.
+*/
 
-	for (i = 0; i < lar; i++)
-		ar[i] = '0';
-	ar[lar] = '\0';
-	return (ar);
-}
-
-/**
- * _checknum - determines length of the number
- * and checks if number is in base 10.
- * @argv: arguments vector.
- * @n: row of the array.
- *
- * Return: length of the number.
- */
-int _checknum(char *argv[], int n)
-{
-	int ln;
-
-	for (ln = 0; argv[n][ln]; ln++)
-		if (!isdigit(argv[n][ln]))
-		{
-			printf("Error\n");
-			exit(98);
-		}
-
-	return (ln);
-}
-
-/**
- * main - Entry point.
- * program that multiplies two positive numbers.
- * @argc: number of arguments.
- * @argv: arguments vector.
- *
- * Return: 0 - success.
- */
 int main(int argc, char *argv[])
 {
-	int ln1, ln2, lnout, add, addl, i, j, k, ca;
-	char *nout;
+	int *mul, i, j, len1 = 0, len2 = 0;
 
 	if (argc != 3)
-		printf("Error\n"), exit(98);
-	ln1 = _checknum(argv, 1), ln2 = _checknum(argv, 2);
-	_is_zero(argv), lnout = ln1 + ln2, nout = malloc(lnout + 1);
-	if (nout == NULL)
-		printf("Error\n"), exit(98);
-	nout = _initialize_array(nout, lnout);
-	k = lnout - 1, i = ln1 - 1, j = ln2 - 1, ca = addl = 0;
-	for (; k >= 0; k--, i--)
+		error(98);
+
+	for (i = 1; i < argc; ++i)
 	{
-		if (i < 0)
+		if (!isNumber(argv[i]))
+			error(98);
+		if (i == 1)
 		{
-			if (addl > 0)
-			{
-				add = (nout[k] - '0') + addl;
-				if (add > 9)
-					nout[k - 1] = (add / 10) + '0';
-				nout[k] = (add % 10) + '0';
-			}
-			i = ln1 - 1, j--, addl = 0, ca++, k = lnout - (1 + ca);
+			for (j = 0; argv[i][j]; j++)
+				++len1;
 		}
-		if (j < 0)
+		if (i == 2)
 		{
-			if (nout[0] != '0')
-				break;
-			lnout--;
-			free(nout), nout = malloc(lnout + 1), nout = _initialize_array(nout, lnout);
-			k = lnout - 1, i = ln1 - 1, j = ln2 - 1, ca = addl = 0;
-		}
-		if (j >= 0)
-		{
-			add = ((argv[1][i] - '0') * (argv[2][j] - '0')) + (nout[k] - '0') + addl;
-			addl = add / 10, nout[k] = (add % 10) + '0';
+			for (j = 0; argv[i][j]; j++)
+				++len2;
 		}
 	}
-	printf("%s\n", nout);
-	return (0);
+
+	mul = int_calloc(len1 + len2, sizeof(int));
+	if (mul == NULL)
+		error(98);
+
+	multiply(mul, argv[1], argv[2], len1, len2);
+	free(mul);
+
+return (0);
+}
+
+/**
+* isNumber - check if string is number.
+* @str: string parameter
+*
+* Return: 1 if number otherwise 0.
+*/
+
+int isNumber(char *str)
+{
+	int j = strlen(str);
+
+	while (j--)
+	{
+		if (str[j] > 47 && str[j] < 58)
+			continue;
+		return (0);
+	}
+return (1);
+}
+
+/**
+  * int_calloc - special calloc for int arrays
+  * @nmemb: n memb
+  * @size: size of array
+  * Return: int *
+  */
+int *int_calloc(int nmemb, unsigned int size)
+{
+	int *p, n;
+
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+
+	/* malloc the space & check for fail */
+	p = malloc(nmemb * size);
+	if (p == NULL)
+		return (NULL);
+
+	for (n = 0; n < nmemb; n++)
+		p[n] = 0;
+
+	return (p);
+}
+
+/**
+  * multiply - perform multiplication
+  *
+  * @product: int pointer for mul answer
+  * @n1: num1 as a string param
+  * @n2: num2 as a string param
+  * @len1: len of num1
+  * @len2: len of num2
+  *
+  * Return: void
+  */
+
+void multiply(int *product, char *n1, char *n2, int len1, int len2)
+{
+	int i, j, i_n1 = 0, i_n2 = 0, res1, res2, sum, carry;
+
+	/* the long math */
+	/* Go from right to left in num1 */
+	for (i = len1 - 1; i >= 0; i--)
+	{
+		sum = 0;
+		carry = 0;
+		i_n2 = 0;
+		res1 = n1[i] - '0';
+
+		/* Go from right to left in num2 */
+		for (j = len2 - 1; j >= 0; j--)
+		{
+			res2 = n2[j] - '0';
+			sum = (res1 * res2) + product[i_n1 + i_n2] + carry;
+			 product[i_n1 + i_n2] = sum % 10;
+			carry = sum / 10;
+			i_n2++;
+		}
+
+		if (carry > 0)
+			product[i_n1 + i_n2] += carry;
+		i_n1++;
+	}
+	i = len1 + len2;
+	while (--i > 0 && product[i] == 0)
+		;
+
+	if (i == -1)
+		_putchar('0');
+
+	while (i >= 0)
+		_putchar(product[i--] + '0');
+	_putchar('\n');
 }
